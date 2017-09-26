@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
+public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
     
     // https://tools.ietf.org/html/rfc7519#section-4.1
     public enum Claims : String {
@@ -31,11 +31,12 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     
-    public struct Payload {
+    public struct Payload : CustomStringConvertible, CustomDebugStringConvertible {
         private(set) var raw: [String : Any] = [:]
         
         init(dictionary: [String : Any]) {
             raw = dictionary
+            print(raw)
         }
         
         public subscript(key: String) -> Any? {
@@ -52,6 +53,18 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
         
         public func float(for key: String) -> Float? {
             return raw[key] as? Float
+        }
+        
+        public func int(for key: String) -> Int? {
+            return raw[key] as? Int
+        }
+        
+        public var description: String {
+            return raw.description
+        }
+        
+        public var debugDescription: String {
+            return raw.debugDescription
         }
         
     }
@@ -208,7 +221,7 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
-extension JWT {
+extension Token {
     
     fileprivate func base64decode(_ input: String) -> Data? {
         let rem = input.characters.count % 4
