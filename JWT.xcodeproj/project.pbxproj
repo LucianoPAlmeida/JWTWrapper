@@ -10,6 +10,7 @@
 		B24567721F7ADB1B001296A0 /* JWT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24567681F7ADB1B001296A0 /* JWT.framework */; };
 		B24567771F7ADB1B001296A0 /* JWTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24567761F7ADB1B001296A0 /* JWTTests.swift */; };
 		B24567791F7ADB1B001296A0 /* JWT.h in Headers */ = {isa = PBXBuildFile; fileRef = B245676B1F7ADB1B001296A0 /* JWT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B24567831F7ADBDB001296A0 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24567821F7ADBDB001296A0 /* JWT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		B24567711F7ADB1B001296A0 /* JWTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24567761F7ADB1B001296A0 /* JWTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTTests.swift; sourceTree = "<group>"; };
 		B24567781F7ADB1B001296A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B24567821F7ADBDB001296A0 /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				B245676B1F7ADB1B001296A0 /* JWT.h */,
 				B245676C1F7ADB1B001296A0 /* Info.plist */,
+				B24567821F7ADBDB001296A0 /* JWT.swift */,
 			);
 			path = JWT;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					B24567671F7ADB1B001296A0 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					B24567701F7ADB1B001296A0 = {
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24567831F7ADBDB001296A0 /* JWT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 		B245677D1F7ADB1B001296A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWT;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +361,7 @@
 		B245677E1F7ADB1B001296A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -375,6 +383,7 @@
 		B24567801F7ADB1B001296A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GGLW8Y2AXF;
 				INFOPLIST_FILE = JWTTests/Info.plist;
@@ -389,6 +398,7 @@
 		B24567811F7ADB1B001296A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GGLW8Y2AXF;
 				INFOPLIST_FILE = JWTTests/Info.plist;
