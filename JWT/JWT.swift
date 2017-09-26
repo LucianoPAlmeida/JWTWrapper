@@ -20,18 +20,48 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
         case nbf = "nbf"
         case iat = "iat"
         case jit = "jti"
+        
+        public static var values: [Claims] { return [.iss , .sub, .aud, .exp, .nbf, .iat, .jit] }
     }
     
-    private(set) var string: String = "" {
-        didSet{
-            decode(token: string)
-        }
+    public enum Header : String {
+        case typ = "typ"
+        case cty = "cty"
+        case alg = "alg"
     }
+    
+    
+    public struct Payload {
+        private(set) var raw: [String : Any] = [:]
+        
+        init(dictionary: [String : Any]) {
+            raw = dictionary
+        }
+        
+        public subscript(key: String) -> Any? {
+            return raw[key]
+        }
+        
+        public func string(for key: String) -> String? {
+            return raw[key] as? String
+        }
+        
+        public func double(for key: String) -> Double? {
+            return raw[key] as? Double
+        }
+        
+        public func float(for key: String) -> Float? {
+            return raw[key] as? Float
+        }
+        
+    }
+    
+    private(set) var string: String = ""
     
     private(set) var header: [String : Any] = [:]
     
     
-    private(set) var payload: [String : Any] = [:]
+    private(set) var payload: Payload = Payload(dictionary: [:])
     
     private(set) var signature: String  = ""
     
@@ -39,40 +69,66 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
     
     /**
          Property that represents "iss" (Issuer) Claim
-     
+         https://tools.ietf.org/html/rfc7519#section-4.1.1
      */
-    private(set) var issuer: String?
+    public private(set) var issuer: String?
     
     /**
-     Property that represents "sub" (Subject) Claim
-     
+         Property that represents "sub" (Subject) Claim
+         https://tools.ietf.org/html/rfc7519#section-4.1.2
      */
-    private(set) var subject: String?
+    public private(set) var subject: String?
     
     /**
          Property that represents "aud" (Audience) Claim
+         https://tools.ietf.org/html/rfc7519#section-4.1.3
      */
-    private(set) var audience: String?
+    public private(set) var audience: String?
     
     /**
          Property that represents "exp" (Expiration Time) Claim
+         https://tools.ietf.org/html/rfc7519#section-4.1.4
      */
-    private(set) var expirationDate: Date?
+    public private(set) var expirationDate: Date?
     
     /**
          Property that represents "nbf" (Not Before) Claim
+         https://tools.ietf.org/html/rfc7519#section-4.1.5
      */
-    private(set) var notBefore: Date?
+    public private(set) var notBefore: Date?
     
     /**
          Property that represents "iat" (Issued At) Claim
+         https://tools.ietf.org/html/rfc7519#section-4.1.6
      */
-    private(set) var issuedAt: Date?
+    public private(set) var issuedAt: Date?
     
     /**
          Property that represents "jti" (JWT ID) Claim
+         https://tools.ietf.org/html/rfc7519#section-4.1.7
      */
-    private(set) var id: String?
+    public private(set) var id: String?
+    
+    
+    // Headers
+
+    /**
+         Property that represents "alg" of the header
+     */
+    public private(set) var algorithm: String?
+    
+    /**
+         Property that represents "typ" (Type) Header Parameter
+         https://tools.ietf.org/html/rfc7519#section-5.1
+     */
+    public private(set) var type: String?
+    
+    /**
+         Property that represents "cty" (Content Type) Header Parameter
+         https://tools.ietf.org/html/rfc7519#section-5.2
+     */
+    public private(set) var contentType: String?
+    
     
     //Computed properties
     var isExpired: Bool {
@@ -86,12 +142,19 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
         self.string = string
         decode(token: string)
     }
-    
+
     private mutating func decode(token : String) {
         let parts = token.components(separatedBy: ".")
         if parts.count >= 2 {
             header = dictionary(from: parts[0])
-            payload = dictionary(from: parts[1])
+            
+            parseHeaders(header: header)
+            
+            var parsed = dictionary(from: parts[1])
+            parseClaims(payload: parsed)
+            parsed.removeAll(keys: Claims.values.map({ $0.rawValue } ))
+
+            payload = Payload(dictionary: parsed)
             
             if parts.count > 2 {
                 signature = parts[2]
@@ -100,14 +163,30 @@ public struct JWT : CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     private mutating func parseClaims(payload: [ String: Any ]) {
-        if let exp = payload["iat"] as? TimeInterval {
-            issuedAt = Date(timeIntervalSince1970: exp)
-        }
         
-        if let exp = payload["exp"] as? TimeInterval {
+        issuer = payload[Claims.iss.rawValue] as? String
+        subject = payload[Claims.sub.rawValue] as? String
+        audience = payload[Claims.aud.rawValue] as? String
+        id = payload[Claims.jit.rawValue] as? String
+
+        if let exp = payload[Claims.exp.rawValue] as? TimeInterval {
             expirationDate = Date(timeIntervalSince1970: exp)
         }
         
+        if let iat = payload[Claims.iat.rawValue] as? TimeInterval {
+            issuedAt = Date(timeIntervalSince1970: iat)
+        }
+        
+        if let nbf = payload[Claims.iat.rawValue] as? TimeInterval {
+            notBefore = Date(timeIntervalSince1970: nbf)
+        }
+
+    }
+    
+    private mutating func parseHeaders(header: [String : Any]) {
+        algorithm = header[Header.alg.rawValue] as? String
+        type = header[Header.typ.rawValue] as? String
+        contentType = header[Header.cty.rawValue] as? String
     }
     
     private func dictionary(from string: String?) -> [String : Any] {
@@ -147,4 +226,10 @@ extension JWT {
         return Data(base64Encoded: base64, options: NSData.Base64DecodingOptions(rawValue: 0))
     }
     
+}
+
+extension Dictionary {
+    public mutating func removeAll(keys: [Key]) {
+        keys.forEach({ removeValue(forKey: $0)})
+    }
 }
