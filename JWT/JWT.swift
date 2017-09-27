@@ -7,31 +7,28 @@
 
 import Foundation
 
-
-
-public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
+public struct Token: CustomStringConvertible, CustomDebugStringConvertible {
     
     // https://tools.ietf.org/html/rfc7519#section-4.1
-    public enum Claims : String {
-        case iss = "iss"
-        case sub = "sub"
-        case aud = "aud"
-        case exp = "exp"
-        case nbf = "nbf"
-        case iat = "iat"
-        case jit = "jti"
+    public enum Claims: String {
+        case iss
+        case sub
+        case aud
+        case exp
+        case nbf
+        case iat
+        case jit
         
-        public static var values: [Claims] { return [.iss , .sub, .aud, .exp, .nbf, .iat, .jit] }
+        public static var values: [Claims] { return [.iss, .sub, .aud, .exp, .nbf, .iat, .jit] }
     }
     
-    public enum Header : String {
-        case typ = "typ"
-        case cty = "cty"
-        case alg = "alg"
+    public enum Header: String {
+        case typ
+        case cty
+        case alg
     }
     
-    
-    public struct Payload : CustomStringConvertible, CustomDebugStringConvertible {
+    public struct Payload: CustomStringConvertible, CustomDebugStringConvertible {
         private(set) var raw: [String : Any] = [:]
         
         init(dictionary: [String : Any]) {
@@ -76,7 +73,6 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
     private(set) var string: String = ""
     
     private(set) var header: [String : Any] = [:]
-    
     
     private(set) var payload: Payload = Payload(dictionary: [:])
     
@@ -126,7 +122,6 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
      */
     public private(set) var id: String?
     
-    
     // Headers
 
     /**
@@ -146,9 +141,8 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
      */
     public private(set) var contentType: String?
     
-    
     //Computed properties
-    var isExpired: Bool {
+    public var isExpired: Bool {
         if let expDate = expirationDate {
             return expDate > Date()
         }
@@ -160,7 +154,7 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
         decode(token: string)
     }
 
-    private mutating func decode(token : String) {
+    private mutating func decode(token: String) {
         let parts = token.components(separatedBy: ".")
         if parts.count >= 2 {
             header = dictionary(from: parts[0])
@@ -169,7 +163,7 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
             
             var parsed = dictionary(from: parts[1])
             parseClaims(payload: parsed)
-            parsed.removeAll(keys: Claims.values.map({ $0.rawValue } ))
+            parsed.removeAll(keys: Claims.values.map({ $0.rawValue }))
 
             payload = Payload(dictionary: parsed)
             
@@ -207,7 +201,7 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     private func dictionary(from string: String?) -> [String : Any] {
-        if let unwrappedString = string,  let data = base64decode(unwrappedString) {
+        if let unwrappedString = string, let data = base64decode(unwrappedString) {
             if let dic = try? JSONSerialization.jsonObject(with: data,
                                                            options: JSONSerialization.ReadingOptions.allowFragments) {
                 return dic as? [String : Any] ?? [:]

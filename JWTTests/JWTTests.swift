@@ -36,28 +36,18 @@ class JWTTests: XCTestCase {
         XCTAssertEqual(jwt.payload.double(for: "height"), 1.75)
         XCTAssertEqual(jwt.payload.number(for: "number"), 789)
 
-
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }
 
 extension Date {
     var fomatted: String {
-        get {
-            let dtFmt = DateFormatter()
-            let locale = Locale.current
+        let dtFmt = DateFormatter()
+        let locale = Locale.current
             
-            dtFmt.dateFormat = "yyyy-MM-dd"
-            dtFmt.locale = locale
+        dtFmt.dateFormat = "yyyy-MM-dd"
+        dtFmt.locale = locale
             
-            return dtFmt.string(from: self)
-        }
+        return dtFmt.string(from: self)
     }
 }
