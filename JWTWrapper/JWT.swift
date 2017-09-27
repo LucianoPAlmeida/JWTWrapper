@@ -33,7 +33,6 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
         
         init(dictionary: [String : Any]) {
             raw = dictionary
-            print(raw)
         }
         
         public subscript(key: String) -> Any? {

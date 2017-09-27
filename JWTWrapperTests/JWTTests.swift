@@ -34,8 +34,9 @@ class JWTTests: XCTestCase {
         XCTAssertEqual(jwt.payload.string(for: "email"), "doe@example.com")
         XCTAssertEqual(jwt.payload.int(for: "id"), 12)
         XCTAssertEqual(jwt.payload.double(for: "height"), 1.75)
+        XCTAssertEqual(jwt.payload.float(for: "height"), 1.75)
         XCTAssertEqual(jwt.payload.number(for: "number"), 789)
-
+        
     }
     
 }
