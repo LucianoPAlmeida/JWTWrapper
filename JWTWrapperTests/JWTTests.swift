@@ -37,6 +37,10 @@ class JWTTests: XCTestCase {
         XCTAssertEqual(jwt.payload.float(for: "height"), 1.75)
         XCTAssertEqual(jwt.payload.number(for: "number"), 789)
         
+        print(jwt.debugDescription)
+        print(jwt.description)
+        print(jwt.payload.description)
+        print(jwt.payload.debugDescription)
     }
     
 }
