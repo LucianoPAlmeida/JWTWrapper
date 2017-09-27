@@ -22,7 +22,7 @@ This is **NOT** a JWT issuer or validator, is just a simple abstraction to parse
   
 ## Usage
  ```swift
-            let jwt = JWT(string: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNZSIsImlhdCI6MTUwNjI4Nzg3MCwiZXhwIjoxNTA2Mzc0MjcwLCJhdWQiOiJ3d3cuZXhhbXBsZS5jb20iLCJzdWIiOiJleGVtcGxlIiwianRpIjoiand0aWQxMCIsIm5iZiI6MTUwNjM3NDI3MCwiZmlyc3RfbmFtZSI6IkpvaG4iLCJsYXN0X25hbWUiOiJEb2UiLCJlbWFpbCI6ImRvZUBleGFtcGxlLmNvbSIsImlkIjoxMiwiaGVpZ2h0IjoxLjc1LCJudW1iZXIiOjc4OX0.sJVuJ39lIouTnTEYlE_0ZlXVp8GXCy9Z7djQwZUDwLI")
+        let jwt = JWT(string: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNZSIsImlhdCI6MTUwNjI4Nzg3MCwiZXhwIjoxNTA2Mzc0MjcwLCJhdWQiOiJ3d3cuZXhhbXBsZS5jb20iLCJzdWIiOiJleGVtcGxlIiwianRpIjoiand0aWQxMCIsIm5iZiI6MTUwNjM3NDI3MCwiZmlyc3RfbmFtZSI6IkpvaG4iLCJsYXN0X25hbWUiOiJEb2UiLCJlbWFpbCI6ImRvZUBleGFtcGxlLmNvbSIsImlkIjoxMiwiaGVpZ2h0IjoxLjc1LCJudW1iZXIiOjc4OX0.sJVuJ39lIouTnTEYlE_0ZlXVp8GXCy9Z7djQwZUDwLI")
         
         // Headers
         jwt.algorithm // "HS256"
