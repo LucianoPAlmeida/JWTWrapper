@@ -59,6 +59,10 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
             return raw[key] as? Int
         }
         
+        public func number(for key: String) -> NSNumber? {
+            return raw[key] as? NSNumber
+        }
+        
         public var description: String {
             return raw.description
         }
@@ -146,7 +150,7 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
     //Computed properties
     var isExpired: Bool {
         if let expDate = expirationDate {
-            return expDate < Date()
+            return expDate > Date()
         }
         return false
     }
@@ -190,7 +194,7 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
             issuedAt = Date(timeIntervalSince1970: iat)
         }
         
-        if let nbf = payload[Claims.iat.rawValue] as? TimeInterval {
+        if let nbf = payload[Claims.nbf.rawValue] as? TimeInterval {
             notBefore = Date(timeIntervalSince1970: nbf)
         }
 
@@ -213,11 +217,33 @@ public struct Token : CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     public var description: String {
-        return "[header = \(header)\npayload = \(payload), signature = \(signature), exp = \(String(describing: expirationDate)), iat = \(String(describing: issuedAt))]"
+        return """
+        header: \(header),
+        payload: \(payload)
+        signature: \(signature)
+        expirationDate: \(String(describing: expirationDate))
+        issuedAt: \(String(describing: issuedAt))
+        notBefore: \(String(describing: notBefore))
+        issuer: \(String(describing: issuer))
+        subject: \(String(describing: subject))
+        audience: \(String(describing: audience))
+        id: \(String(describing: id))
+        """
     }
     
     public var debugDescription: String {
-        return "[header = \(header)\npayload = \(payload), signature = \(signature), exp = \(String(describing: expirationDate)), iat = \(String(describing: issuedAt))]"
+        return """
+        header: \(header),
+        payload: \(payload)
+        signature: \(signature)
+        exp: \(String(describing: expirationDate))
+        iat: \(String(describing: issuedAt))
+        nbf: \(String(describing: notBefore))
+        iss: \(String(describing: issuer))
+        sub: \(String(describing: subject))
+        aud: \(String(describing: audience))
+        jti: \(String(describing: id))
+        """
     }
 }
 
