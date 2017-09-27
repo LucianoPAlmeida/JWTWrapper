@@ -1,8 +1,8 @@
 # JWTWrapper
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
-[![Travis](https://img.shields.io/travis/LucianoPAlmeida/DataLoader.svg)](https://travis-ci.org/LucianoPAlmeida/DataLoader)
-[![Codecov](https://img.shields.io/codecov/c/github/LucianoPAlmeida/DataLoader.svg)](https://codecov.io/gh/LucianoPAlmeida/DataLoader)
+[![Travis](https://img.shields.io/travis/LucianoPAlmeida/JWTWrapper.svg)](https://travis-ci.org/LucianoPAlmeida/JWTWrapper)
+[![Codecov](https://img.shields.io/codecov/c/github/LucianoPAlmeida/JWTWrapper.svg)](https://codecov.io/gh/LucianoPAlmeida/JWTWrapper)
 
 This is a convenience library to wrapper the JWT in a structure and make more parser easier. 
 This is **NOT** a JWT issuer or validator, is just a simple abstraction to parse token payload and info in your app.
