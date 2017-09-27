@@ -7,186 +7,187 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B24567721F7ADB1B001296A0 /* JWT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24567681F7ADB1B001296A0 /* JWT.framework */; };
-		B24567771F7ADB1B001296A0 /* JWTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24567761F7ADB1B001296A0 /* JWTTests.swift */; };
-		B24567791F7ADB1B001296A0 /* JWT.h in Headers */ = {isa = PBXBuildFile; fileRef = B245676B1F7ADB1B001296A0 /* JWT.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B24567831F7ADBDB001296A0 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24567821F7ADBDB001296A0 /* JWT.swift */; };
+		B268D9901F7BD9A300F74088 /* JWTWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B268D9861F7BD9A300F74088 /* JWTWrapper.framework */; };
+		B268D9971F7BD9A300F74088 /* JWTWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B268D9891F7BD9A300F74088 /* JWTWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B268D9A11F7BDA8F00F74088 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268D9A01F7BDA8F00F74088 /* JWT.swift */; };
+		B268D9A61F7BDB1800F74088 /* JWTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268D9A51F7BDB1800F74088 /* JWTTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B24567731F7ADB1B001296A0 /* PBXContainerItemProxy */ = {
+		B268D9911F7BD9A300F74088 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B245675F1F7ADB1B001296A0 /* Project object */;
+			containerPortal = B268D97D1F7BD9A200F74088 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B24567671F7ADB1B001296A0;
-			remoteInfo = JWT;
+			remoteGlobalIDString = B268D9851F7BD9A300F74088;
+			remoteInfo = JWTWrapper;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B24567681F7ADB1B001296A0 /* JWT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B245676B1F7ADB1B001296A0 /* JWT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWT.h; sourceTree = "<group>"; };
-		B245676C1F7ADB1B001296A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B24567711F7ADB1B001296A0 /* JWTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B24567761F7ADB1B001296A0 /* JWTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTTests.swift; sourceTree = "<group>"; };
-		B24567781F7ADB1B001296A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B24567821F7ADBDB001296A0 /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		B268D9861F7BD9A300F74088 /* JWTWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWTWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B268D9891F7BD9A300F74088 /* JWTWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWTWrapper.h; sourceTree = "<group>"; };
+		B268D98A1F7BD9A300F74088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B268D98F1F7BD9A300F74088 /* JWTWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWTWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B268D9961F7BD9A300F74088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B268D9A01F7BDA8F00F74088 /* JWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		B268D9A51F7BDB1800F74088 /* JWTTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B24567641F7ADB1B001296A0 /* Frameworks */ = {
+		B268D9821F7BD9A300F74088 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B245676E1F7ADB1B001296A0 /* Frameworks */ = {
+		B268D98C1F7BD9A300F74088 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24567721F7ADB1B001296A0 /* JWT.framework in Frameworks */,
+				B268D9901F7BD9A300F74088 /* JWTWrapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B245675E1F7ADB1B001296A0 = {
+		B268D97C1F7BD9A200F74088 = {
 			isa = PBXGroup;
 			children = (
-				B245676A1F7ADB1B001296A0 /* JWT */,
-				B24567751F7ADB1B001296A0 /* JWTTests */,
-				B24567691F7ADB1B001296A0 /* Products */,
+				B268D9881F7BD9A300F74088 /* JWTWrapper */,
+				B268D9931F7BD9A300F74088 /* JWTWrapperTests */,
+				B268D9871F7BD9A300F74088 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B24567691F7ADB1B001296A0 /* Products */ = {
+		B268D9871F7BD9A300F74088 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B24567681F7ADB1B001296A0 /* JWT.framework */,
-				B24567711F7ADB1B001296A0 /* JWTTests.xctest */,
+				B268D9861F7BD9A300F74088 /* JWTWrapper.framework */,
+				B268D98F1F7BD9A300F74088 /* JWTWrapperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B245676A1F7ADB1B001296A0 /* JWT */ = {
+		B268D9881F7BD9A300F74088 /* JWTWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				B245676B1F7ADB1B001296A0 /* JWT.h */,
-				B245676C1F7ADB1B001296A0 /* Info.plist */,
-				B24567821F7ADBDB001296A0 /* JWT.swift */,
+				B268D9A01F7BDA8F00F74088 /* JWT.swift */,
+				B268D9891F7BD9A300F74088 /* JWTWrapper.h */,
+				B268D98A1F7BD9A300F74088 /* Info.plist */,
 			);
-			path = JWT;
+			path = JWTWrapper;
 			sourceTree = "<group>";
 		};
-		B24567751F7ADB1B001296A0 /* JWTTests */ = {
+		B268D9931F7BD9A300F74088 /* JWTWrapperTests */ = {
 			isa = PBXGroup;
 			children = (
-				B24567761F7ADB1B001296A0 /* JWTTests.swift */,
-				B24567781F7ADB1B001296A0 /* Info.plist */,
+				B268D9A51F7BDB1800F74088 /* JWTTests.swift */,
+				B268D9961F7BD9A300F74088 /* Info.plist */,
 			);
-			path = JWTTests;
+			path = JWTWrapperTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B24567651F7ADB1B001296A0 /* Headers */ = {
+		B268D9831F7BD9A300F74088 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24567791F7ADB1B001296A0 /* JWT.h in Headers */,
+				B268D9971F7BD9A300F74088 /* JWTWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B24567671F7ADB1B001296A0 /* JWT */ = {
+		B268D9851F7BD9A300F74088 /* JWTWrapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B245677C1F7ADB1B001296A0 /* Build configuration list for PBXNativeTarget "JWT" */;
+			buildConfigurationList = B268D99A1F7BD9A300F74088 /* Build configuration list for PBXNativeTarget "JWTWrapper" */;
 			buildPhases = (
-				B24567631F7ADB1B001296A0 /* Sources */,
-				B24567641F7ADB1B001296A0 /* Frameworks */,
-				B24567651F7ADB1B001296A0 /* Headers */,
-				B24567661F7ADB1B001296A0 /* Resources */,
-				B268D97B1F7BD51800F74088 /* ShellScript */,
+				B268D9811F7BD9A300F74088 /* Sources */,
+				B268D9821F7BD9A300F74088 /* Frameworks */,
+				B268D9831F7BD9A300F74088 /* Headers */,
+				B268D9841F7BD9A300F74088 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = JWT;
-			productName = JWT;
-			productReference = B24567681F7ADB1B001296A0 /* JWT.framework */;
+			name = JWTWrapper;
+			productName = JWTWrapper;
+			productReference = B268D9861F7BD9A300F74088 /* JWTWrapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B24567701F7ADB1B001296A0 /* JWTTests */ = {
+		B268D98E1F7BD9A300F74088 /* JWTWrapperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B245677F1F7ADB1B001296A0 /* Build configuration list for PBXNativeTarget "JWTTests" */;
+			buildConfigurationList = B268D99D1F7BD9A300F74088 /* Build configuration list for PBXNativeTarget "JWTWrapperTests" */;
 			buildPhases = (
-				B245676D1F7ADB1B001296A0 /* Sources */,
-				B245676E1F7ADB1B001296A0 /* Frameworks */,
-				B245676F1F7ADB1B001296A0 /* Resources */,
+				B268D98B1F7BD9A300F74088 /* Sources */,
+				B268D98C1F7BD9A300F74088 /* Frameworks */,
+				B268D98D1F7BD9A300F74088 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B24567741F7ADB1B001296A0 /* PBXTargetDependency */,
+				B268D9921F7BD9A300F74088 /* PBXTargetDependency */,
 			);
-			name = JWTTests;
-			productName = JWTTests;
-			productReference = B24567711F7ADB1B001296A0 /* JWTTests.xctest */;
+			name = JWTWrapperTests;
+			productName = JWTWrapperTests;
+			productReference = B268D98F1F7BD9A300F74088 /* JWTWrapperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B245675F1F7ADB1B001296A0 /* Project object */ = {
+		B268D97D1F7BD9A200F74088 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Luciano Almeida";
 				TargetAttributes = {
-					B24567671F7ADB1B001296A0 = {
+					B268D9851F7BD9A300F74088 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
-					B24567701F7ADB1B001296A0 = {
+					B268D98E1F7BD9A300F74088 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = B24567621F7ADB1B001296A0 /* Build configuration list for PBXProject "JWT" */;
+			buildConfigurationList = B268D9801F7BD9A200F74088 /* Build configuration list for PBXProject "JWTWrapper" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = B245675E1F7ADB1B001296A0;
-			productRefGroup = B24567691F7ADB1B001296A0 /* Products */;
+			mainGroup = B268D97C1F7BD9A200F74088;
+			productRefGroup = B268D9871F7BD9A300F74088 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B24567671F7ADB1B001296A0 /* JWT */,
-				B24567701F7ADB1B001296A0 /* JWTTests */,
+				B268D9851F7BD9A300F74088 /* JWTWrapper */,
+				B268D98E1F7BD9A300F74088 /* JWTWrapperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B24567661F7ADB1B001296A0 /* Resources */ = {
+		B268D9841F7BD9A300F74088 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B245676F1F7ADB1B001296A0 /* Resources */ = {
+		B268D98D1F7BD9A300F74088 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,51 +196,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B268D97B1F7BD51800F74088 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		B24567631F7ADB1B001296A0 /* Sources */ = {
+		B268D9811F7BD9A300F74088 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24567831F7ADBDB001296A0 /* JWT.swift in Sources */,
+				B268D9A11F7BDA8F00F74088 /* JWT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B245676D1F7ADB1B001296A0 /* Sources */ = {
+		B268D98B1F7BD9A300F74088 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24567771F7ADB1B001296A0 /* JWTTests.swift in Sources */,
+				B268D9A61F7BDB1800F74088 /* JWTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B24567741F7ADB1B001296A0 /* PBXTargetDependency */ = {
+		B268D9921F7BD9A300F74088 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B24567671F7ADB1B001296A0 /* JWT */;
-			targetProxy = B24567731F7ADB1B001296A0 /* PBXContainerItemProxy */;
+			target = B268D9851F7BD9A300F74088 /* JWTWrapper */;
+			targetProxy = B268D9911F7BD9A300F74088 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B245677A1F7ADB1B001296A0 /* Debug */ = {
+		B268D9981F7BD9A300F74088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -299,7 +284,7 @@
 			};
 			name = Debug;
 		};
-		B245677B1F7ADB1B001296A0 /* Release */ = {
+		B268D9991F7BD9A300F74088 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,21 +337,21 @@
 			};
 			name = Release;
 		};
-		B245677D1F7ADB1B001296A0 /* Debug */ = {
+		B268D99B1F7BD9A300F74088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GGLW8Y2AXF;
+				DEVELOPMENT_TEAM = 43Z9WE284C;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = JWT/Info.plist;
+				INFOPLIST_FILE = JWTWrapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWTWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -375,21 +360,21 @@
 			};
 			name = Debug;
 		};
-		B245677E1F7ADB1B001296A0 /* Release */ = {
+		B268D99C1F7BD9A300F74088 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = GGLW8Y2AXF;
+				DEVELOPMENT_TEAM = 43Z9WE284C;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = JWT/Info.plist;
+				INFOPLIST_FILE = JWTWrapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWTWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -397,31 +382,36 @@
 			};
 			name = Release;
 		};
-		B24567801F7ADB1B001296A0 /* Debug */ = {
+		B268D99E1F7BD9A300F74088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GGLW8Y2AXF;
-				INFOPLIST_FILE = JWTTests/Info.plist;
+				DEVELOPMENT_TEAM = 43Z9WE284C;
+				INFOPLIST_FILE = JWTWrapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWTTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWTWrapperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		B24567811F7ADB1B001296A0 /* Release */ = {
+		B268D99F1F7BD9A300F74088 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GGLW8Y2AXF;
-				INFOPLIST_FILE = JWTTests/Info.plist;
+				DEVELOPMENT_TEAM = 43Z9WE284C;
+				INFOPLIST_FILE = JWTWrapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWTTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lib.jwt.JWTWrapperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -430,34 +420,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B24567621F7ADB1B001296A0 /* Build configuration list for PBXProject "JWT" */ = {
+		B268D9801F7BD9A200F74088 /* Build configuration list for PBXProject "JWTWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B245677A1F7ADB1B001296A0 /* Debug */,
-				B245677B1F7ADB1B001296A0 /* Release */,
+				B268D9981F7BD9A300F74088 /* Debug */,
+				B268D9991F7BD9A300F74088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B245677C1F7ADB1B001296A0 /* Build configuration list for PBXNativeTarget "JWT" */ = {
+		B268D99A1F7BD9A300F74088 /* Build configuration list for PBXNativeTarget "JWTWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B245677D1F7ADB1B001296A0 /* Debug */,
-				B245677E1F7ADB1B001296A0 /* Release */,
+				B268D99B1F7BD9A300F74088 /* Debug */,
+				B268D99C1F7BD9A300F74088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B245677F1F7ADB1B001296A0 /* Build configuration list for PBXNativeTarget "JWTTests" */ = {
+		B268D99D1F7BD9A300F74088 /* Build configuration list for PBXNativeTarget "JWTWrapperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B24567801F7ADB1B001296A0 /* Debug */,
-				B24567811F7ADB1B001296A0 /* Release */,
+				B268D99E1F7BD9A300F74088 /* Debug */,
+				B268D99F1F7BD9A300F74088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B245675F1F7ADB1B001296A0 /* Project object */;
+	rootObject = B268D97D1F7BD9A200F74088 /* Project object */;
 }

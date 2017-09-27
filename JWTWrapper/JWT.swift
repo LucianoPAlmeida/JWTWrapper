@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Token: CustomStringConvertible, CustomDebugStringConvertible {
+public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
     
     // https://tools.ietf.org/html/rfc7519#section-4.1
     public enum Claims: String {
@@ -17,9 +17,9 @@ public struct Token: CustomStringConvertible, CustomDebugStringConvertible {
         case exp
         case nbf
         case iat
-        case jit
+        case jti
         
-        public static var values: [Claims] { return [.iss, .sub, .aud, .exp, .nbf, .iat, .jit] }
+        public static var values: [Claims] { return [.iss, .sub, .aud, .exp, .nbf, .iat, .jti] }
     }
     
     public enum Header: String {
@@ -178,7 +178,7 @@ public struct Token: CustomStringConvertible, CustomDebugStringConvertible {
         issuer = payload[Claims.iss.rawValue] as? String
         subject = payload[Claims.sub.rawValue] as? String
         audience = payload[Claims.aud.rawValue] as? String
-        id = payload[Claims.jit.rawValue] as? String
+        id = payload[Claims.jti.rawValue] as? String
 
         if let exp = payload[Claims.exp.rawValue] as? TimeInterval {
             expirationDate = Date(timeIntervalSince1970: exp)
@@ -241,7 +241,7 @@ public struct Token: CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
-extension Token {
+extension JWT {
     
     fileprivate func base64decode(_ input: String) -> Data? {
         let rem = input.characters.count % 4
