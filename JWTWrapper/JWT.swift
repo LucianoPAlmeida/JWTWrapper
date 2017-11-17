@@ -29,9 +29,9 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     public struct Payload: CustomStringConvertible, CustomDebugStringConvertible {
-        private(set) var raw: [String : Any] = [:]
+        public private(set) var raw: [String : Any] = [:]
         
-        init(dictionary: [String : Any]) {
+        public init(dictionary: [String : Any]) {
             raw = dictionary
         }
         
@@ -69,13 +69,13 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
         
     }
     
-    private(set) var string: String = ""
+    public private(set) var string: String = ""
     
-    private(set) var header: [String : Any] = [:]
+    public private(set) var header: [String : Any] = [:]
     
-    private(set) var payload: Payload = Payload(dictionary: [:])
+    public private(set) var payload: Payload = Payload(dictionary: [:])
     
-    private(set) var signature: String  = ""
+    public private(set) var signature: String  = ""
     
     //Claims
     
@@ -148,7 +148,7 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
         return false
     }
     
-    init(string: String) {
+    public init(string: String) {
         self.string = string
         decode(token: string)
     }
@@ -243,7 +243,7 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
 extension JWT {
     
     fileprivate func base64decode(_ input: String) -> Data? {
-        let rem = input.characters.count % 4
+        let rem = input.count % 4
         
         var ending = ""
         if rem > 0 {
@@ -261,7 +261,7 @@ extension JWT {
 }
 
 extension Dictionary {
-    public mutating func removeAll(keys: [Key]) {
+    fileprivate mutating func removeAll(keys: [Key]) {
         keys.forEach({ removeValue(forKey: $0)})
     }
 }
