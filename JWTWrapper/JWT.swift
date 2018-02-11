@@ -239,6 +239,12 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
         """
     }
 }
+// MARK: Equatable Conformance
+extension JWT: Equatable {
+    public static func == (lhs: JWT, rhs: JWT) -> Bool {
+        return lhs.string == rhs.string
+    }
+}
 
 extension JWT {
     
