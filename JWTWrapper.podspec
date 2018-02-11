@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JWTWrapper'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A Convenience class to wrapper the JWT token string'
   s.description = <<-DESC
                 Convenience class for wrapper JWT to easilly get info and payload data. This is NOT an issuer or validator library is just a simple wrapper to parse the token in a structure. 
