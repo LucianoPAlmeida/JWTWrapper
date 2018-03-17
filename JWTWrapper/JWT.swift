@@ -29,9 +29,9 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     public struct Payload: CustomStringConvertible, CustomDebugStringConvertible {
-        public private(set) var raw: [String : Any] = [:]
+        public private(set) var raw: [String: Any] = [:]
         
-        public init(dictionary: [String : Any]) {
+        public init(dictionary: [String: Any]) {
             raw = dictionary
         }
         
@@ -71,7 +71,7 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
     
     public private(set) var string: String = ""
     
-    public private(set) var header: [String : Any] = [:]
+    public private(set) var header: [String: Any] = [:]
     
     public private(set) var payload: Payload = Payload(dictionary: [:])
     
@@ -193,17 +193,17 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
 
     }
     
-    private mutating func parseHeaders(header: [String : Any]) {
+    private mutating func parseHeaders(header: [String: Any]) {
         algorithm = header[Header.alg.rawValue] as? String
         type = header[Header.typ.rawValue] as? String
         contentType = header[Header.cty.rawValue] as? String
     }
     
-    private func dictionary(from string: String?) -> [String : Any] {
+    private func dictionary(from string: String?) -> [String: Any] {
         if let unwrappedString = string, let data = base64decode(unwrappedString) {
             if let dic = try? JSONSerialization.jsonObject(with: data,
                                                            options: JSONSerialization.ReadingOptions.allowFragments) {
-                return dic as? [String : Any] ?? [:]
+                return dic as? [String: Any] ?? [:]
             }
         }
         return [:]
@@ -261,7 +261,7 @@ extension JWT {
             .replacingOccurrences(of: "-", with: "+", options: NSString.CompareOptions.caseInsensitive, range: nil)
             .replacingOccurrences(of: "_", with: "/", options: NSString.CompareOptions.caseInsensitive, range: nil) + ending
         
-        return Data(base64Encoded: base64, options: NSData.Base64DecodingOptions(rawValue: 0))
+        return Data(base64Encoded: base64, options: Data.Base64DecodingOptions(rawValue: 0))
     }
     
 }
