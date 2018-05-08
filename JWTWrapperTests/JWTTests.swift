@@ -26,7 +26,7 @@ class JWTTests: XCTestCase {
         XCTAssertEqual(jwt.expirationDate?.fomatted, "2017-09-25")
         XCTAssertEqual(jwt.id, "jwtid10" )
         XCTAssertEqual(jwt.notBefore?.fomatted, "2017-09-25")
-        XCTAssertFalse(jwt.isExpired)
+        XCTAssertTrue(jwt.isExpired)
         
         //Payload
         XCTAssertEqual(jwt.payload["first_name"] as? String, "John")
