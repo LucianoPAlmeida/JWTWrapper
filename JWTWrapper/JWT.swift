@@ -143,7 +143,7 @@ public struct JWT: CustomStringConvertible, CustomDebugStringConvertible {
     //Computed properties
     public var isExpired: Bool {
         if let expDate = expirationDate {
-            return expDate > Date()
+            return expDate < Date()
         }
         return false
     }
